@@ -1,0 +1,27 @@
+$primary-color: #ff751d;
+$secondary-color: #f5f6fb;
+$error-color: #eb5757;
+$black-color: #000;
+$gray-color: #52555f;
+$placeholder-color: #a6abb9;
+$white-color: #fff;
+$opacity-color: rgba(82, 85, 95, 0.7);
+$background-window-color: linear-gradient(155deg, #1d346a 0%, #031634 100%);
+$select-table-color: #c7ccdc;
+$success-color: #407946;
+$dinamyc-color: #ffdac0;
+
+:export {
+  primaryColor: $primary-color;
+  secondary-color: $secondary-color;
+  error-color: $error-color;
+  black-color: $black-color;
+  gray-color: $gray-color;
+  placeholder-color: $placeholder-color;
+  white-color: $white-color;
+  opacity-color: $opacity-color;
+  background-window-color: $background-window-color;
+  select-table-color: $select-table-color;
+  success-color: $success-color;
+  dinamyc-color: $dinamyc-color;
+}
