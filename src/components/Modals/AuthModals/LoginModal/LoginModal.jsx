@@ -1,6 +1,4 @@
-import styles from './loginModal.module.scss';
-
-('use client');
+'use client';
 import * as yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState } from 'react';
