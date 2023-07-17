@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useSelector } from 'react-redux';
 import authSelector from '@/src/redux/authApi/authSelector';
 import { useEffect, useState } from 'react';
@@ -11,13 +11,10 @@ const RestrictedRoute = ({ children }) => {
 
   useEffect(() => {
     if (getAuthToken) {
-      const isOnLoginPage = router.pathname === '/';
-      if (isOnLoginPage) {
-        router.replace('/home');
-      }
+      router.replace('/balance');
+    } else {
+      setLoading(false);
     }
-
-    setLoading(false);
   }, [getAuthToken, router]);
 
   if (loading) {

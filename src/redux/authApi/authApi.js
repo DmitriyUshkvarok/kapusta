@@ -3,7 +3,7 @@ import { logOut } from './authSlice';
 export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '',
+    baseUrl: 'https://task-pro-app.onrender.com/api/',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
@@ -24,7 +24,7 @@ export const authApi = createApi({
     }),
     login: builder.mutation({
       query: (credentials) => ({
-        url: '',
+        url: 'users/login',
         method: 'POST',
         body: credentials,
       }),
@@ -32,7 +32,7 @@ export const authApi = createApi({
     }),
     logout: builder.mutation({
       query: () => ({
-        url: '',
+        url: 'users/logout',
         method: 'POST',
       }),
       invalidatesTags: ['auth'],
