@@ -1,0 +1,16 @@
+@import '../util/variables.module';
+
+.linkStyled {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: $black-color;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+
+  margin-bottom: 24px;
+}

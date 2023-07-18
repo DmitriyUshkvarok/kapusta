@@ -1,19 +1,14 @@
 'use client';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import styles from '@/src/sass/components/_balanceTopPanel.module.scss';
 
 const BalanceTopPanel = () => {
-  // const router = useRouter();
-
   return (
     <div>
-      {/* <Link href="/expense/transactionExpense">to transaction</Link> */}
-      {/* <Link href="/statistic">Reports</Link> */}
-      <div>
-        <h2>Balance:</h2>
-        <div>
-          <p>00.00 UAH</p>
-          <p>Confirm</p>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Balance:</h2>
+        <div className={styles.balanceContent}>
+          <p className={styles.sumaTitle}>00.00 UAH</p>
+          <p className={styles.confirmTitle}>Confirm</p>
         </div>
       </div>
     </div>

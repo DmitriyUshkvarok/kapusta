@@ -1,11 +1,12 @@
 'use client';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMediaQuery } from 'react-responsive';
 import BalanceTopPanel from '@/src/components/BalanceTopPanel/BalanceTopPanel';
 import TransactionForm from '@/src/components/TransactionForm/TransactionForm';
 import NavBalance from '@/src/components/NavBalance/NavBalance';
 import ButtonBackMobile from '@/src/components/ButtonBackMobile/ButtonBackMobile';
+import ReportsUser from '@/src/components/ReportsUser/ReportsUser';
+import styles from '@/src/sass/components/_balanceLayout.module.scss';
 
 export default function BalanceLayout({ children }) {
   const pathname = usePathname();
@@ -13,18 +14,21 @@ export default function BalanceLayout({ children }) {
 
   if (isMobile) {
     return (
-      <div>
-        <ButtonBackMobile pathname={pathname} />
-        <BalanceTopPanel />
-        {children}
-
+      <>
+        <div className={styles.container}>
+          <ButtonBackMobile pathname={pathname} />
+          <ReportsUser />
+          <BalanceTopPanel />
+          {children}
+        </div>
         <NavBalance />
-      </div>
+      </>
     );
   } else {
     return (
       <div>
         <BalanceTopPanel />
+        <ReportsUser />
         <NavBalance />
         <TransactionForm />
         {children}

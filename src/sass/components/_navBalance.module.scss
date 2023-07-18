@@ -1,0 +1,32 @@
+@import '../util/variables.module';
+
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.listNav {
+  display: flex;
+  justify-content: center;
+}
+
+.itemNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 53px;
+  background: $secondary-color;
+  color: $black-color;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
+
+.active {
+  background: $primary-color;
+  color: $white-color;
+}
