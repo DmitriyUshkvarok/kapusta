@@ -40,7 +40,7 @@ function LoginModal({ onFormChange }) {
     try {
       const response = await loginMutation(values);
       if (!response.error) {
-        router.replace('/balance');
+        router.replace('/balance/expense');
       } else {
         if (response.error.status === 401) {
           // toast.error(response.error.data.message);
