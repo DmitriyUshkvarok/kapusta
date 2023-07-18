@@ -159,5 +159,9 @@
 <path d="M19.733 17.6h1.067v1.067h-1.067v-1.067z"></path>
 <path d="M21.867 17.6h1.067v1.067h-1.067v-1.067z"></path>
 </symbol>
+<symbol id="icon-logout-1" viewBox="0 0 32 32">
+<path fill="#cbccd0" style="fill: var(--color1, #cbccd0)" d="M20 28h-16v-24h16v2h4v-6h-24v32h24v-6h-4v2h-0z"></path>
+<path fill="#cbccd0" style="fill: var(--color1, #cbccd0)" d="M24.586 8.586l-2.828 2.828 2.586 2.586h-10.344v4h10.344l-2.586 2.586 2.828 2.828 7.414-7.414-7.414-7.414z"></path>
+</symbol>
 </defs>
 </svg>

@@ -19,6 +19,7 @@ const authSlice = createSlice({
       id: null,
     },
     token: null,
+    isLoggedIn: false,
   },
   reducers: {
     logOut: (state, action) => {
@@ -35,6 +36,7 @@ const authSlice = createSlice({
         state.user.id = action.payload.id;
         state.user.avatarURL = action.payload.avatarURL;
         state.token = action.payload.token;
+        state.isLoggedIn = true;
       })
       .addMatcher(authApi.endpoints.logout.matchFulfilled, (state) => {
         state.user = {
@@ -44,6 +46,7 @@ const authSlice = createSlice({
           id: null,
         };
         state.token = null;
+        state.isLoggedIn = false;
       });
   },
 });

@@ -1,0 +1,45 @@
+@import '../util/mixins.module';
+@import '../util/variables.module';
+
+.authNanWrapper {
+  @include flexCenter();
+  gap: 16px;
+}
+
+.userName {
+  display: none;
+
+  @include mediaQuery(768px) {
+    display: block;
+  }
+}
+
+.userAvatar {
+  @include flexCenter();
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: $secondary-color;
+}
+
+.iconLogout {
+  cursor: pointer;
+
+  @include mediaQuery(768px) {
+    display: none;
+  }
+}
+
+.logoutText {
+  display: none;
+
+  @include mediaQuery(768px) {
+    display: block;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

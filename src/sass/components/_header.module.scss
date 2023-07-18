@@ -1,0 +1,19 @@
+@import '../util/mixins.module';
+
+.nav {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mediaQuery(768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
