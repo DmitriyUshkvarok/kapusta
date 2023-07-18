@@ -11,6 +11,9 @@
 
   @include mediaQuery(768px) {
     display: block;
+    color: $gray-color;
+    font-size: 12px;
+    letter-spacing: 0.48px;
   }
 }
 
@@ -41,5 +44,14 @@
     display: block;
     text-decoration: underline;
     cursor: pointer;
+    color: $gray-color;
+    font-size: 12px;
+    letter-spacing: 0.48px;
+
+    &::before {
+      content: '|';
+      margin-right: 20px;
+      color: $gray-color;
+    }
   }
 }

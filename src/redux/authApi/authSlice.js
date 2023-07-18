@@ -6,7 +6,7 @@ import { authApi } from './authApi';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'isLoggedIn'],
 };
 
 const authSlice = createSlice({
@@ -30,6 +30,17 @@ const authSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
+      .addMatcher(
+        authApi.endpoints.register.matchFulfilled,
+        (state, action) => {
+          state.user.email = action.payload.email;
+          state.user.name = action.payload.name;
+          state.user.id = action.payload.id;
+          state.user.avatarURL = action.payload.avatarURL;
+          state.token = action.payload.token;
+          state.isLoggedIn = true;
+        }
+      )
       .addMatcher(authApi.endpoints.login.matchFulfilled, (state, action) => {
         state.user.email = action.payload.email;
         state.user.name = action.payload.name;

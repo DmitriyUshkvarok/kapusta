@@ -1,0 +1,34 @@
+@import '../sass/util/mixins.module';
+@import '../sass/util/variables.module';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.authSection {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url('/auth-mobile.png');
+  background-repeat: no-repeat;
+  background-position: top -50px left 0;
+}
+
+.authLogo {
+  padding-top: 86px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
+.subTitle {
+  color: $gray-color;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.95px;
+  text-transform: uppercase;
+  padding-left: 31px;
+  margin-bottom: 50px;
+}
