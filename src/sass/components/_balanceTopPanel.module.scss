@@ -1,0 +1,70 @@
+@import '../util//variables.module';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balanceContent {
+  position: relative;
+  display: flex;
+}
+
+.title {
+  margin-bottom: 8px;
+  color: $opacity-color;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.24px;
+}
+
+.sumaTitle {
+  border-radius: 22px 0px 0px 22px;
+  border: 2px solid $white-color;
+  padding: 12px 16px 12px 19px;
+  color: $black-color;
+  text-align: right;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
+
+.confirmTitle {
+  border-radius: 0px 22px 22px 0px;
+  border: 2px solid $white-color;
+  border-left: none;
+  padding: 12px 22px 12px 18px;
+
+  color: rgba(82, 85, 95, 0.7);
+  text-align: center;
+
+  font-size: 12px;
+
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+.balanceContent.hovered .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
