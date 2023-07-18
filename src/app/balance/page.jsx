@@ -5,7 +5,6 @@ const BalancePage = () => {
   return (
     <PrivatRoute>
       <div>привет это домашняя страница</div>
-      <BalanceTopPanel />
     </PrivatRoute>
   );
 };
