@@ -1,9 +1,13 @@
+@import '../util/mixins.module';
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   margin-top: 40px;
+  @include mediaQuery(768px) {
+    margin: 0;
+  }
 }
 
 .timeTitle {

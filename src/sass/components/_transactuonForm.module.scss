@@ -1,0 +1,7 @@
+@import '../util/mixins.module';
+
+.container {
+  @include mediaQuery(768px) {
+    display: flex;
+  }
+}

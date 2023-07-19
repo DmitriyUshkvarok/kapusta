@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 100px;
+  background-color: #f5f6fb;
+  padding: 10px 20px;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  margin-top: 48px;
+}
+
+.title {
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
