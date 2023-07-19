@@ -1,33 +1,16 @@
 'use client';
-import * as yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useLoginMutation } from '@/src/redux/authApi/authApi';
 import { useRouter } from 'next/navigation';
+import loginschema from '@/src/validationSchemas/loginSchemas';
 import styleLogin from '../../../../sass/components/_loginForm.module.scss';
 
 const initialValues = {
   email: '',
   password: '',
 };
-
-const schema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Invalid email')
-    .test('email-format', 'Invalid email format', (value) => {
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      return emailRegex.test(value);
-    })
-    .required(),
-  password: yup
-    .string()
-    .min(8)
-    .max(64)
-    .matches(/^[^\s]+$/, 'Password should not contain spaces')
-    .required(),
-});
 
 function LoginModal({ onFormChange }) {
   const [loginMutation] = useLoginMutation();
@@ -65,7 +48,7 @@ function LoginModal({ onFormChange }) {
     <>
       <Formik
         initialValues={initialValues}
-        validationSchema={schema}
+        validationSchema={loginschema}
         onSubmit={handleSubmit}
       >
         <Form className={styleLogin.form}>
