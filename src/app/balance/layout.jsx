@@ -8,6 +8,7 @@ import ButtonBackMobile from '@/src/components/ButtonBackMobile/ButtonBackMobile
 import ReportsUser from '@/src/components/ReportsUser/ReportsUser';
 
 import styles from '@/src/sass/components/_balanceLayout.module.scss';
+import DateCalendar from '@/src/components/Date/Date';
 
 export default function BalanceLayout({ children }) {
   const pathname = usePathname();
@@ -19,7 +20,9 @@ export default function BalanceLayout({ children }) {
         <div className={styles.container}>
           <ButtonBackMobile pathname={pathname} />
           <ReportsUser />
+
           <BalanceTopPanel />
+          <DateCalendar />
           {children}
         </div>
         <NavBalance />
