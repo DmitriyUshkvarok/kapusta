@@ -6,6 +6,7 @@
 }
 
 .form {
+  box-sizing: border-box;
   @include flexCenter();
   flex-direction: column;
   width: 280px;
