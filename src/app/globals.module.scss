@@ -1,9 +1,15 @@
 @import '../sass/util/mixins.module';
 @import '../sass/util/variables.module';
-* {
+
+%global-styles {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+
+* {
+  @extend %global-styles;
 }
 
 html,
