@@ -1,4 +1,4 @@
-import './globals.css';
+import globalStyles from './globals.module.scss';
 import { Roboto } from 'next/font/google';
 import ReduxProvider from '../redux/ReduxProvider/Provider';
 import Head from 'next/head';
@@ -26,8 +26,10 @@ export default function RootLayout({ children }) {
           />
         </Head>
         <body className={roboto.className}>
-          <Header />
-          <main>{children}</main>
+          <div className={globalStyles.container}>
+            <Header />
+            <main>{children}</main>
+          </div>
         </body>
       </html>
     </ReduxProvider>

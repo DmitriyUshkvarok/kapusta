@@ -11,13 +11,13 @@ const AuthBlock = () => {
   };
 
   return (
-    <div>
+    <>
       {isLoginForm ? (
         <LoginModal onFormChange={handleFormChange} />
       ) : (
         <RegistrationModal onFormChange={handleFormChange} />
       )}
-    </div>
+    </>
   );
 };
 

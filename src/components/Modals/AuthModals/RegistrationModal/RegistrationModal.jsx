@@ -17,6 +17,7 @@ const RegistrationModal = ({ onFormChange }) => {
   const [registrMutation] = useRegisterMutation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [activeForm, setActiveForm] = useState('registration');
 
   const router = useRouter();
 
@@ -43,6 +44,11 @@ const RegistrationModal = ({ onFormChange }) => {
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const handleFormChange = () => {
+    setActiveForm(activeForm === 'registration' ? 'rogin' : 'registration');
+    onFormChange();
   };
 
   return (
@@ -129,12 +135,18 @@ const RegistrationModal = ({ onFormChange }) => {
           <div className={styleLogin.btnGroup}>
             <button
               type="submit"
-              className={styleLogin.btnLogin}
-              onClick={onFormChange}
+              className={`${styleLogin.btnLogin} ${
+                activeForm === 'login' ? styleLogin.activeButton : '' 
+              }`}
+              onClick={handleFormChange} 
             >
               {isLoading ? <p>Loading...</p> : 'Log in'}
             </button>
-            <button onClick={onFormChange} className={styleLogin.btnRegistr}>
+            <button
+              className={`${styleLogin.btnRegistr} ${
+                activeForm === 'registration' ? styleLogin.activeButton : '' 
+              }`}
+            >
               registration
             </button>
           </div>

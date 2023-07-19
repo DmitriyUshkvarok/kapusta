@@ -15,6 +15,11 @@
   border-radius: 30px;
   background-color: $white-color;
   @include boxShadow(5px, 10px, 20px, 0px, rgba(170, 178, 197, 0.4));
+
+  @include mediaQuery(768px) {
+    width: 426px;
+    padding: 56px 83px;
+  }
 }
 
 .loginTitle {
@@ -24,6 +29,11 @@
   font-size: 12px;
   letter-spacing: 0.48px;
   margin-bottom: 16px;
+
+  @include mediaQuery(768px) {
+    max-width: 248px;
+    margin-bottom: 30px;
+  }
 }
 
 .btnGoogle {
@@ -37,10 +47,19 @@
   margin-right: auto;
   margin-bottom: 32px;
   cursor: pointer;
+
+  @include mediaQuery(768px) {
+    width: 119px;
+  }
 }
 
 .btnGoogleIcon {
   margin-right: 10px;
+
+  @include mediaQuery(768px) {
+    width: 17px;
+    height: 18px;
+  }
 }
 
 .btnGoogleText {
@@ -56,6 +75,12 @@
   font-size: 12px;
   letter-spacing: 0.48px;
   margin-bottom: 16px;
+
+  @include mediaQuery(768px) {
+    width: 258px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
 }
 
 .loginFormGroup {
@@ -65,6 +90,12 @@
 
   &:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  @include mediaQuery(768px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
   }
 }
 
@@ -93,6 +124,10 @@
   &:focus {
     outline: none;
   }
+
+  @include mediaQuery(768px) {
+    width: 258px;
+  }
 }
 
 .showPasswordWrapper {
@@ -106,6 +141,10 @@
 .btnGroup {
   display: flex;
   gap: 8px;
+
+  @include mediaQuery(768px) {
+    gap: 14px;
+  }
 }
 
 .btnLogin {
@@ -119,6 +158,10 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
+
+  @include mediaQuery(768px) {
+    width: 122px;
+  }
 }
 
 .btnRegistr {
@@ -132,4 +175,13 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
+
+  @include mediaQuery(768px) {
+    width: 122px;
+  }
+}
+
+.activeButton {
+  background-color: $primary-color;
+  color: $secondary-color;
 }

@@ -10,17 +10,61 @@
 }
 
 .authSection {
-  width: 100vw;
-  min-height: 100vh;
   background-image: url('/auth-mobile.png');
   background-repeat: no-repeat;
   background-position: top -50px left 0;
+
+  @include mediaQuery(768px) {
+    background-image: url('/auth-tablet.png');
+  }
+
+  @include mediaQuery(1280px) {
+    background-image: url('/auth-desktop.png');
+  }
+}
+
+.desktopWrapper {
+  @include mediaQuery(1280px) {
+    display: flex;
+  }
+}
+
+.desktopBlockOne {
+  @include mediaQuery(1280px) {
+    margin-right: 157px;
+  }
+}
+
+.desktopBlockTwo {
+  margin-top: 117px;
 }
 
 .authLogo {
   padding-top: 86px;
   padding-left: 20px;
   margin-bottom: 5px;
+
+  @include mediaQuery(768px) {
+    padding-top: 80px;
+    padding-left: 171px;
+  }
+
+  @include mediaQuery(1280px) {
+    padding-top: 308px;
+    padding-left: 229px;
+  }
+}
+
+.authLogoIcon {
+  @include mediaQuery(768px) {
+    width: 307px;
+    height: 78px;
+  }
+
+  @include mediaQuery(1280px) {
+    width: 377px;
+    height: 120px;
+  }
 }
 
 .subTitle {
@@ -31,4 +75,47 @@
   text-transform: uppercase;
   padding-left: 31px;
   margin-bottom: 50px;
+
+  @include mediaQuery(768px) {
+    padding-left: 224px;
+    font-size: 16px;
+    letter-spacing: 2.88px;
+    margin-bottom: 80px;
+  }
+
+  @include mediaQuery(1280px) {
+    padding-left: 301px;
+  }
+}
+
+.iconKapusta {
+  position: relative;
+  margin-top: 16px;
+  padding-left: 35px;
+
+  @include mediaQuery(768px) {
+    padding-left: 103px;
+    margin-top: -40px;
+    z-index: -1;
+  }
+
+  @include mediaQuery(1280px) {
+    padding-left: 230px;
+  }
+}
+
+.iconKapustaMob {
+  @include mediaQuery(768px) {
+    display: none;
+  }
+}
+
+.iconKapustaTablet {
+  @include mediaQuery(320px) {
+    display: none;
+  }
+
+  @include mediaQuery(768px) {
+    display: block;
+  }
 }
