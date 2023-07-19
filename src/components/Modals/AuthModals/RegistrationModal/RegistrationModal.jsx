@@ -6,6 +6,8 @@ import { useRegisterMutation } from '@/src/redux/authApi/authApi';
 import { useRouter } from 'next/navigation';
 import registrationSchema from '@/src/validationSchemas/registrationSchema';
 import styleLogin from '../../../../sass/components/_loginForm.module.scss';
+import { Store } from 'react-notifications-component';
+import { notificationOptions } from '@/src/notificationConfig/notificationConfig';
 
 const initialValues = {
   name: '',
@@ -28,10 +30,16 @@ const RegistrationModal = ({ onFormChange }) => {
       if (!response.error) {
         router.replace('/balance');
       } else {
-        if (response.error.status === 401) {
-          // toast.error(response.error.data.message);
+        if (response.error.status === 409) {
+          Store.addNotification({
+            ...notificationOptions,
+            message: response.error.data.message,
+          });
         } else {
-          // toast.error('An error occurred. Please try again.');
+          Store.addNotification({
+            ...notificationOptions,
+            message: response.error.data.message,
+          });
         }
       }
     } catch (error) {
@@ -85,7 +93,13 @@ const RegistrationModal = ({ onFormChange }) => {
               placeholder="your name"
               id="register-name"
             />
-            <ErrorMessage name="name">{(msg) => <div>{msg}</div>}</ErrorMessage>
+            <ErrorMessage name="name">
+              {(msg) => (
+                <div className={styleLogin.loginFormError}>
+                  {msg} <span className={styleLogin.loginFormErrorMark}>*</span>
+                </div>
+              )}
+            </ErrorMessage>
           </div>
           <div className={styleLogin.loginFormGroup}>
             <label htmlFor="login-email" className={styleLogin.loginFormLabel}>
@@ -99,7 +113,11 @@ const RegistrationModal = ({ onFormChange }) => {
               id="login-email"
             />
             <ErrorMessage name="email">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => (
+                <div className={styleLogin.loginFormError}>
+                  {msg} <span className={styleLogin.loginFormErrorMark}>*</span>
+                </div>
+              )}
             </ErrorMessage>
           </div>
           <div className={styleLogin.loginFormWrapper}>
@@ -118,7 +136,12 @@ const RegistrationModal = ({ onFormChange }) => {
                 id="login-passsword"
               />
               <ErrorMessage name="password">
-                {(msg) => <div>{msg}</div>}
+                {(msg) => (
+                  <div className={styleLogin.loginFormError}>
+                    {msg}
+                    <span className={styleLogin.loginFormErrorMark}>*</span>
+                  </div>
+                )}
               </ErrorMessage>
               <div
                 onClick={togglePasswordVisibility}
@@ -136,15 +159,15 @@ const RegistrationModal = ({ onFormChange }) => {
             <button
               type="submit"
               className={`${styleLogin.btnLogin} ${
-                activeForm === 'login' ? styleLogin.activeButton : '' 
+                activeForm === 'login' ? styleLogin.activeButton : ''
               }`}
-              onClick={handleFormChange} 
+              onClick={handleFormChange}
             >
               {isLoading ? <p>Loading...</p> : 'Log in'}
             </button>
             <button
               className={`${styleLogin.btnRegistr} ${
-                activeForm === 'registration' ? styleLogin.activeButton : '' 
+                activeForm === 'registration' ? styleLogin.activeButton : ''
               }`}
             >
               registration

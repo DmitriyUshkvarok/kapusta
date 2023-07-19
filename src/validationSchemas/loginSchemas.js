@@ -8,13 +8,13 @@ const loginschema = yup.object().shape({
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return emailRegex.test(value);
     })
-    .required(),
+    .required('This is a required field'),
   password: yup
     .string()
     .min(8)
     .max(64)
     .matches(/^[^\s]+$/, 'Password should not contain spaces')
-    .required(),
+    .required('This is a required field'),
 });
 
 export default loginschema;

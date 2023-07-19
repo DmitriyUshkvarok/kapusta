@@ -159,6 +159,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
+  @include boxShadow(5px, 10px, 20px, 0px, rgba(170, 178, 197, 0.4));
 
   @include mediaQuery(768px) {
     width: 122px;
@@ -176,6 +177,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
+  @include boxShadow(5px, 10px, 20px, 0px, rgba(170, 178, 197, 0.4));
 
   @include mediaQuery(768px) {
     width: 122px;
@@ -185,4 +187,20 @@
 .activeButton {
   background-color: $primary-color;
   color: $secondary-color;
+  @include boxShadow(5px, 10px, 20px, 0px, rgba(170, 178, 197, 0.4));
+}
+
+.loginFormError {
+  width: 265px;
+  color: $error-color;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  margin-top: 4px;
+}
+
+.loginFormErrorMark {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  font-size: 10px;
 }

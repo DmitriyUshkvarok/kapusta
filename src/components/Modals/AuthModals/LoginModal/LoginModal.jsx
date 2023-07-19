@@ -6,6 +6,8 @@ import { useLoginMutation } from '@/src/redux/authApi/authApi';
 import { useRouter } from 'next/navigation';
 import loginschema from '@/src/validationSchemas/loginSchemas';
 import styleLogin from '../../../../sass/components/_loginForm.module.scss';
+import { Store } from 'react-notifications-component';
+import { notificationOptions } from '@/src/notificationConfig/notificationConfig';
 
 const initialValues = {
   email: '',
@@ -28,9 +30,17 @@ function LoginModal({ onFormChange }) {
         router.replace('/balance');
       } else {
         if (response.error.status === 401) {
-          // toast.error(response.error.data.message);
+          Store.addNotification({
+            ...notificationOptions,
+            message: response.error.data.message,
+            type: 'danger',
+          });
         } else {
-          // toast.error('An error occurred. Please try again.');
+          Store.addNotification({
+            ...notificationOptions,
+            message: 'An error occurred. Please try again.',
+            type: 'danger',
+          });
         }
       }
     } catch (error) {
@@ -47,7 +57,7 @@ function LoginModal({ onFormChange }) {
 
   const handleFormChange = () => {
     setActiveForm(activeForm === 'login' ? 'registration' : 'login');
-    onFormChange(); 
+    onFormChange();
   };
 
   return (
@@ -82,7 +92,12 @@ function LoginModal({ onFormChange }) {
               id="login-email"
             />
             <ErrorMessage name="email">
-              {(msg) => <div>{msg}</div>}
+              {(msg) => (
+                <div className={styleLogin.loginFormError}>
+                  {msg}
+                  <span className={styleLogin.loginFormErrorMark}>*</span>
+                </div>
+              )}
             </ErrorMessage>
           </div>
           <div className={styleLogin.loginFormWrapper}>
@@ -101,7 +116,12 @@ function LoginModal({ onFormChange }) {
                 id="login-passsword"
               />
               <ErrorMessage name="password">
-                {(msg) => <div>{msg}</div>}
+                {(msg) => (
+                  <div className={styleLogin.loginFormError}>
+                    {msg}
+                    <span className={styleLogin.loginFormErrorMark}>*</span>
+                  </div>
+                )}
               </ErrorMessage>
               <div
                 onClick={togglePasswordVisibility}

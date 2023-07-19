@@ -1,4 +1,5 @@
 import globalStyles from './global.module.scss';
+import './globals.css';
 import { Roboto } from 'next/font/google';
 import ReduxProvider from '../redux/ReduxProvider/Provider';
 import Head from 'next/head';

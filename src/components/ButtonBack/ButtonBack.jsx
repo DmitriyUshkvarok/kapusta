@@ -9,7 +9,10 @@ const ButtonBack = () => {
   };
   return (
     <button type="button" onClick={handleBack}>
-      Вернуться на главную
+      <svg width={16} height={16}>
+        <use xlinkHref="/sprite.svg#icon-keyboard_backspace-24px-1" />
+      </svg>
+      <span>Main page</span>
     </button>
   );
 };

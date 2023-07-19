@@ -1,9 +1,12 @@
+import StatisticPanelBalance from '@/src/components/StatisticPanelBalance/StatisticPanelBalance';
 export default function StatisticLayout({ children }) {
   return (
-    <div>
-      <h1>panel balance</h1>
+    <>
+      <div>
+        <StatisticPanelBalance />
+      </div>
       <p>panel income and expense</p>
       {children}
-    </div>
+    </>
   );
 }
