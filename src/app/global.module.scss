@@ -1,0 +1,21 @@
+@import '../sass/util/mixins.module';
+@import '../sass/util/variables.module';
+
+.container {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mediaQuery(320px) {
+    width: 320px;
+  }
+
+  @include mediaQuery(768px) {
+    width: 768px;
+  }
+
+  @include mediaQuery(1280px) {
+    width: 1280px;
+  }
+}

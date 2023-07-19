@@ -1,7 +1,7 @@
 import styles from './page.module.scss';
 import AuthBlock from '../components/AuthBlock/AuthBlock';
 import RestrictedRoute from '../components/RestictedRoute/RestictedRoute';
-import globalStyles from './globals.module.scss';
+import globalStyles from './global.module.scss';
 
 export default function Home() {
   return (
