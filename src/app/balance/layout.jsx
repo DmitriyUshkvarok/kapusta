@@ -6,6 +6,7 @@ import TransactionForm from '@/src/components/TransactionForm/TransactionForm';
 import NavBalance from '@/src/components/NavBalance/NavBalance';
 import ButtonBackMobile from '@/src/components/ButtonBackMobile/ButtonBackMobile';
 import ReportsUser from '@/src/components/ReportsUser/ReportsUser';
+
 import styles from '@/src/sass/components/_balanceLayout.module.scss';
 
 export default function BalanceLayout({ children }) {
@@ -26,9 +27,12 @@ export default function BalanceLayout({ children }) {
     );
   } else {
     return (
-      <div>
-        <BalanceTopPanel />
-        <ReportsUser />
+      <div className={styles.container}>
+        <div className={styles.wrapContent}>
+          <BalanceTopPanel />
+          <ReportsUser />
+        </div>
+
         <NavBalance />
         <TransactionForm />
         {children}

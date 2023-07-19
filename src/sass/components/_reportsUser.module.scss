@@ -5,6 +5,9 @@
   @include flexCenter();
   gap: 15px;
   margin-bottom: 35px;
+  @include mediaQuery(768px) {
+    margin-bottom: 0px;
+  }
 }
 
 .linkStyled {
