@@ -1,7 +1,23 @@
+@import '../util/mixins.module';
+
 .container {
-  padding: 19px 20px 162px;
+  padding: 19px 20px 0;
   background-image: url('/bcgMobile.png');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-position: top;
+  background-size: 320px 296px;
+  @include mediaQuery(768px) {
+    padding: 40px 32px 0;
+    margin: 0 auto;
+    background-image: url('/bcgTablet.png');
+
+    background-size: cover;
+  }
+}
+
+.wrapContent {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 60px;
 }
