@@ -1,4 +1,5 @@
 import IncomePage from './income/page';
+
 const StatisticPage = () => {
   return (
     <>

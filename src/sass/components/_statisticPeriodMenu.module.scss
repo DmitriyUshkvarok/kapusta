@@ -1,0 +1,28 @@
+@import '../util/variables.module';
+@import '../util/mixins.module';
+
+.statisticPeriodTitle {
+  color: $opacity-color;
+  font-size: 12px;
+  letter-spacing: 0.48px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.statisticPeriodwrapper {
+  @include flexCenter();
+}
+
+.statisticPeriodBtnPrev {
+  background-color: transparent;
+  border: none;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.statisticPeriodBtnNext {
+  background-color: transparent;
+  border: none;
+  margin-left: 3px;
+  cursor: pointer;
+}

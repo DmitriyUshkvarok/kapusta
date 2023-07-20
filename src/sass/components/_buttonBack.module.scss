@@ -1,0 +1,22 @@
+@import '../util/mixins.module';
+
+.buttonBack {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonBackIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.buttonBackText {
+  @include mediaQuery(320px) {
+    display: none;
+  }
+
+  @include mediaQuery(768px) {
+    display: flex;
+  }
+}
