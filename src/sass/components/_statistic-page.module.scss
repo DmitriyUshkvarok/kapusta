@@ -1,5 +1,22 @@
+@import '../util/variables.module';
+@import '../util/mixins.module';
+
 .statisticPage {
   background-image: url('/statistic-fon-mob.png');
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: top -60px left 0;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mediaQuery(768px) {
+    background-image: url('/statistic-fon-tabl.png');
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include mediaQuery(1280px) {
+    background-image: url('/statistic-fon-desk.png');
+    padding-left: 123px;
+    padding-right: 123px;
+  }
 }

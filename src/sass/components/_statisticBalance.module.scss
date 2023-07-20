@@ -1,6 +1,14 @@
 @import '../util/variables.module';
 @import '../util/mixins.module';
 
+.statisticBalanceWrapper {
+  @include mediaQuery(768px) {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .statisticBalanceText {
   color: $opacity-color;
   text-align: center;
@@ -22,4 +30,8 @@
   letter-spacing: 0.24px;
   text-transform: uppercase;
   margin-bottom: 32px;
+
+  @include mediaQuery(768px) {
+    margin-bottom: 0;
+  }
 }

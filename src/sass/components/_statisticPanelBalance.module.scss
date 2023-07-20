@@ -1,21 +1,51 @@
+@import '../util/variables.module';
+@import '../util/mixins.module';
+
 .statisticPanelList {
   display: flex;
   flex-direction: column;
+
+  @include mediaQuery(768px) {
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    padding-top: 40px;
+    justify-content: space-between;
+  }
 }
 
 .statisticPanelItemBtnBack {
   padding-top: 16px;
-  padding-left: 20px;
   margin-bottom: 16px;
+
+  @include mediaQuery(768px) {
+    padding-top: 0;
+    margin-bottom: 0;
+    order: -1;
+  }
 }
 
 .statisticPanelItemBalance {
   margin-left: auto;
   margin-right: auto;
+
+  @include mediaQuery(768px) {
+    margin: 0;
+    order: 1;
+  }
 }
 
-.statisticPanelItemPeriod{
+.statisticPanelItemPeriod {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 32px;
+
+  @include mediaQuery(768px) {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    order: 2;
+  }
 }

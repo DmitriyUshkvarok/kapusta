@@ -1,5 +1,9 @@
 const IncomeList = () => {
-  return <div></div>;
+  return (
+    <>
+      <div>test</div>
+    </>
+  );
 };
 
 export default IncomeList;

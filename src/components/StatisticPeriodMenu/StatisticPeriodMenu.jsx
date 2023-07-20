@@ -25,7 +25,9 @@ const StatisticPeriodMenu = () => {
             <use xlinkHref="/sprite.svg#icon-prev" />
           </svg>
         </button>
-        <div>{format(currentPeriod, 'MMMM yyyy')}</div>
+        <div className={styles.statisticPeriodText}>
+          {format(currentPeriod, 'MMMM yyyy')}
+        </div>
         <button
           type="button"
           onClick={handleNextMonth}

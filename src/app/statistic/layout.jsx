@@ -1,4 +1,5 @@
 import StatisticPanelBalance from '@/src/components/StatisticPanelBalance/StatisticPanelBalance';
+import StatisticExpenseIncomePanel from '@/src/components/StatisticExpenseIncomePanel/StatisticExpenseIncomePanel';
 import styles from '../../sass/components/_statistic-page.module.scss';
 
 export default function StatisticLayout({ children }) {
@@ -8,7 +9,9 @@ export default function StatisticLayout({ children }) {
         <div>
           <StatisticPanelBalance />
         </div>
-        <p>panel income and expense</p>
+        <div>
+          <StatisticExpenseIncomePanel />
+        </div>
         {children}
       </section>
       ;
