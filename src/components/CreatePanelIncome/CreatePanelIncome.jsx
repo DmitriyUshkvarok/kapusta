@@ -1,5 +1,13 @@
+import ListPanelBalance from '../ListPanelBalance/ListPanelBalance';
+import Summary from '../Summary/Summary';
+
 const CreatePanelIncome = () => {
-  return <div></div>;
+  return (
+    <>
+      <ListPanelBalance data={[]} />
+      <Summary data={[]} />
+    </>
+  );
 };
 
 export default CreatePanelIncome;

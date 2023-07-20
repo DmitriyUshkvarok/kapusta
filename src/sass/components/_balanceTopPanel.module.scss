@@ -36,6 +36,7 @@
   left: 0;
   top: 80px;
   padding: 29px 24px 32px;
+  z-index: 999;
 
   border-radius: 30px;
   background: linear-gradient(155deg, #1d346a 0%, #031634 100%);
@@ -43,6 +44,9 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
+  @include mediaQuery(768px) {
+    top: 54px;
+  }
 }
 
 .popUp.show {

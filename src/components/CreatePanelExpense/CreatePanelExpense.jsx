@@ -1,6 +1,5 @@
-'use client';
-import { useMediaQuery } from 'react-responsive';
-import styles from '@/src/sass/components/_createPanelExpense.module.scss';
+import ListPanelBalance from '../ListPanelBalance/ListPanelBalance';
+import Summary from '../Summary/Summary';
 
 const expenseData = [
   { name: 'Undeground', sum: '30', category: 'Transport', date: '21.11.2019' },
@@ -36,43 +35,27 @@ const expenseData = [
   },
 ];
 
-const CreatePanelExpense = () => {
-  const isTablet = useMediaQuery({ minWidth: 768 });
+const data = [
+  { month: 'January', sum: '10 000' },
+  { month: 'February', sum: '20 000' },
+  { month: 'March', sum: '8 000' },
+  { month: 'April', sum: '13 000' },
+  { month: 'May', sum: '100 000' },
+  { month: 'June', sum: '20 000' },
+  { month: 'July', sum: '10 000' },
+  { month: 'August', sum: '30 000' },
+  { month: 'September', sum: '40 000' },
+  { month: 'October', sum: '400' },
+  { month: 'November', sum: '23 000' },
+  { month: 'December', sum: '12 000' },
+];
 
+const CreatePanelExpense = () => {
   return (
-    <ul className={styles.container}>
-      {expenseData.map(({ name, sum, category, date }, i) => (
-        <li className={styles.itemList} key={i}>
-          <div className={styles.wrapFlexContainer}>
-            <p className={styles.titleNameProduct}>{name}</p>
-            {isTablet ? (
-              <>
-                <span
-                  style={{ order: 1 }}
-                  className={styles.titleDateAndCategory}
-                >
-                  {date}
-                </span>
-                <p style={{ order: 3 }} className={styles.titleDateAndCategory}>
-                  {category}
-                </p>
-              </>
-            ) : (
-              <div className={styles.wrapCategoryDate}>
-                <span className={styles.titleDateAndCategory}>{date}</span>
-                <p className={styles.titleDateAndCategory}>{category}</p>
-              </div>
-            )}
-          </div>
-          <div className={styles.wrapIconSum}>
-            <p className={styles.sum}>{sum}.00 uan.</p>
-            <svg width={18} height={18}>
-              <use xlinkHref="/sprite.svg#icon-delete-1" />
-            </svg>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ListPanelBalance data={expenseData} />
+      <Summary data={data} />
+    </>
   );
 };
 
