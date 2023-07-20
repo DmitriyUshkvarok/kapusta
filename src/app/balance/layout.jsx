@@ -9,7 +9,6 @@ import ReportsUser from '@/src/components/ReportsUser/ReportsUser';
 
 import styles from '@/src/sass/components/_balanceLayout.module.scss';
 import DateCalendar from '@/src/components/Date/Date';
-import Summary from '@/src/components/Summary/Summary';
 
 export default function BalanceLayout({ children }) {
   const pathname = usePathname();
