@@ -9,7 +9,6 @@ import ReportsUser from '@/src/components/ReportsUser/ReportsUser';
 
 import styles from '@/src/sass/components/_balanceLayout.module.scss';
 import DateCalendar from '@/src/components/Date/Date';
-import CaptionList from '@/src/components/CaptionList/CaptionList';
 
 export default function BalanceLayout({ children }) {
   const pathname = usePathname();
@@ -21,7 +20,6 @@ export default function BalanceLayout({ children }) {
         <div className={styles.container}>
           <ButtonBackMobile pathname={pathname} />
           <ReportsUser />
-
           <BalanceTopPanel />
           <DateCalendar />
           {children}
@@ -40,8 +38,7 @@ export default function BalanceLayout({ children }) {
         <NavBalance />
         <div className={styles.wrapContentTablet}>
           <TransactionForm />
-          <CaptionList />
-          {children}
+          <div className={styles.containerDesktop}>{children}</div>
         </div>
       </div>
     );

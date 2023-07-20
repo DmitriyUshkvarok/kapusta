@@ -18,6 +18,7 @@
   justify-content: center;
   @include mediaQuery(768px) {
     justify-content: flex-start;
+    gap: 2px;
   }
 }
 
@@ -36,8 +37,8 @@
 
   @include mediaQuery(768px) {
     background-color: #fafbfd;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
     height: 0;
     padding: 20px 0;
   }

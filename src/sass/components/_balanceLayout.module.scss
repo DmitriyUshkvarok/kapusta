@@ -7,27 +7,47 @@
   background-position: top;
   background-size: 320px 296px;
   @include mediaQuery(768px) {
-    padding: 40px 32px 0;
+    padding: 40px 32px 378px;
     margin: 0 auto;
-    background-image: url('/bcgTablet.png');
-
-    background-size: cover;
+    background-image: url('/bcgTablet.png'), url('/bottomBcgTablet.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, bottom right 88px;
+    background-size: 768px 529px, 183px 146px;
+  }
+  @include mediaQuery(1280px) {
+    padding: 40px 92px 205px;
+    margin: 0 auto;
+    background-image: url('/bcgDesktop.png'), url('/bottomBcgDesktop.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, bottom center;
+    background-size: 1280px 529px, 1280px 232px;
   }
 }
 
 .wrapContent {
   display: flex;
   justify-content: space-between;
-
   margin-bottom: 60px;
+  @include mediaQuery(1280px) {
+    justify-content: end;
+    gap: 298px;
+    margin-bottom: 10px;
+  }
 }
 
 .wrapContentTablet {
+  position: relative;
   border-radius: 0px 30px 30px 30px;
   background: #fff;
-
-  /* shadow 1 */
   box-shadow: 0px 10px 60px 0px rgba(170, 178, 197, 0.2);
-
   padding: 26px 40px 42px;
+}
+
+.containerDesktop {
+  @include mediaQuery(1280px) {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 74px;
+  }
 }
