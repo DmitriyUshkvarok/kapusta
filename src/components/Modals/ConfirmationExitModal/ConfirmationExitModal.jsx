@@ -1,7 +1,7 @@
 import styles from '@/src/sass/components/_confirmationExitModal.module.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const СonfirmationExitModal = () => {
+const ConfirmationExitModal = () => {
   return (
     <div className={styles.container}>
       <AiOutlineClose className={styles.closeBtn} />
@@ -16,4 +16,4 @@ const СonfirmationExitModal = () => {
   );
 };
 
-export default СonfirmationExitModal;
+export default ConfirmationExitModal;

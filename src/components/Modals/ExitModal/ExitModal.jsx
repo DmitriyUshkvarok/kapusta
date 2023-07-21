@@ -6,7 +6,11 @@ const ExitModal = () => {
     <div className={styles.container}>
       <AiOutlineClose className={styles.closeBtn} />
       <div className={styles.textModal}>Are you sure?</div>
-      <button type="button" className={`${styles.btn} ${styles.btnAccept}`}>
+      <button
+        type="button"
+        className={`${styles.btn} ${styles.btnAccept}`}
+        onClick={console.log(`123`)}
+      >
         Yes
       </button>
       <button type="button" className={`${styles.btn} ${styles.btnReject}`}>

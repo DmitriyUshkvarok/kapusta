@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <RestrictedRoute>
         <ReactNotification />
+
         <main className={styles.main}>
           <div className={globalStyles.container}>
             <section className={styles.authSection}>
