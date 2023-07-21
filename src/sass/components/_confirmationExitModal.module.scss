@@ -1,0 +1,61 @@
+@import '../util/mixins.module';
+@import '../util/variables.module';
+
+.container {
+    width: 380px;
+    height: 194px;
+    border-radius: 30px;
+    // border: 1px solid red;
+    box-shadow: 10px 10px 30px 0px rgba(82, 85, 95, 0.40);
+    padding: 50px 57px 60px;
+    position: relative;
+    background-color: $white-color;
+}
+
+.btn {
+    width: 125px;
+    height: 44px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.textModal {
+    color: $gray-color;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.28px;
+
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.btnAccept {
+    background-color: $primary-color;
+    border: none;
+    color: #FFF;
+    margin-right: 15px;
+
+}
+
+.btnReject {
+    background-color: $white-color;
+    border: 2px solid #F5F6FB;
+    color: #52555F;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
