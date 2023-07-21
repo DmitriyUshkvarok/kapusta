@@ -11,7 +11,7 @@ const RestrictedRoute = ({ children }) => {
 
   useEffect(() => {
     if (getAuthToken) {
-      router.replace('/balance');
+      router.replace('/balance/expense');
     } else {
       setLoading(false);
     }
