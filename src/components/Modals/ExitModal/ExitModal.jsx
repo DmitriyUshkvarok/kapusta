@@ -9,7 +9,7 @@ const ExitModal = () => {
       <button
         type="button"
         className={`${styles.btn} ${styles.btnAccept}`}
-        onClick={console.log(`123`)}
+        onClick={console.log(`44444444444444`)}
       >
         Yes
       </button>

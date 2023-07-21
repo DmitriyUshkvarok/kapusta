@@ -36,8 +36,11 @@ const Modal = () => {
   });
 
   const dispatch = useDispatch();
-  const handleBackdropClick = () => {
-    dispatch(closeModal());
+  const handleBackdropClick = (e) => {
+    const backdrop = document.querySelector(`.${styles.modalBackdrop}`);
+    if (e.target === backdrop) {
+      dispatch(closeModal());
+    }
   };
 
   return (
