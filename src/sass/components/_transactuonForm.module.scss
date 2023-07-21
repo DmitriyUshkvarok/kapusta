@@ -1,17 +1,251 @@
 @import '../util/mixins.module';
 
 .container {
+  margin-top: 18px;
   @include mediaQuery(768px) {
     display: flex;
+    margin-top: 0;
+    align-items: baseline;
   }
 }
 
 .form {
-  width: 280px;
-  margin: 0 auto;
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include mediaQuery(768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 44px;
+    row-gap: 32px;
+  }
 }
 
 .label {
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    display: block;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 290px;
+    display: block;
+  }
+}
+
+.wrapCustomSelect {
+  position: relative;
+  margin-bottom: 34px;
+  @include mediaQuery(768px) {
+    margin-bottom: 0;
+  }
+}
+
+.wrapCustomSelect:focus {
+  outline: 2px solid orange;
+  outline-offset: -2px;
+  border-bottom-right-radius: 16px;
+
+  @include mediaQuery(768px) {
+    border-bottom-right-radius: 0;
+  }
+}
+
+.iconStyled {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+.customSelect {
   width: 280px;
-  display: block;
+
+  padding: 12px 20px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  color: #c7ccdc;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  text-align: left;
+
+  @include mediaQuery(768px) {
+    width: 186px;
+    max-height: 40px;
+    border: 2px solid #c7ccdc;
+    border-bottom-right-radius: 0;
+    border-left: none;
+    padding: 11px 20px;
+  }
+  @include mediaQuery(768px) {
+    width: 168px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding-left: 20px;
+  border: 2px solid #fff;
+
+  border-top-left-radius: 16px;
+  background-color: transparent;
+  height: 40px;
+
+  @include mediaQuery(768px) {
+    border: 2px solid #c7ccdc;
+  }
+
+  &::placeholder {
+    color: #c7ccdc;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.24px;
+  }
+}
+
+.labelForSum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 90px;
+  @include mediaQuery(768px) {
+    margin-bottom: 0;
+  }
+
+  @include mediaQuery(1280px) {
+    align-self: baseline;
+  }
+}
+
+.inputBySum {
+  width: 125px;
+  height: 44px;
+  padding-left: 20px;
+  background-color: transparent;
+  border-radius: 22px 0px 0px 22px;
+  border: 2px solid #fff;
+
+  @include mediaQuery(768px) {
+    width: 100px;
+    border: 2px solid #c7ccdc;
+    border-radius: 0px 20px 20px 0px;
+    height: 40px;
+    border-left: none;
+    padding-right: 40px;
+  }
+  @include mediaQuery(1280px) {
+    max-width: 120px;
+  }
+}
+.containerByIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 0px 22px 22px 0px;
+  border: 2px solid #fff;
+  border-left: none;
+  cursor: pointer;
+
+  @include mediaQuery(768px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+  }
+}
+
+.btnContainer {
+  @include mediaQuery(768px) {
+    padding-left: 30px;
+  }
+}
+
+.btn {
+  border: none;
+  width: 130px;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.btnSubmit {
+  margin-right: 20px;
+  color: #fff;
+  background: #ff751d;
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+}
+
+.btnClear {
+  color: #52555f;
+  background: #f5f6fb;
+  box-shadow: 1px 2px 5px 0px rgba(170, 178, 197, 0.4);
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.customListSelect {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 888;
+  opacity: 0;
+
+  width: 100%;
+  text-align: left;
+  border: 2px solid #f5f6fb;
+  background: #fff;
+  box-shadow: 0px 3px 4px 0px rgba(170, 178, 197, 0.4);
+}
+
+.customListSelect.open {
+  animation: slideIn 110ms ease-out;
+  opacity: 1;
+}
+
+.customItem {
+  color: #c7ccdc;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.24px;
+
+  padding: 8px 19px;
+
+  &:hover {
+    color: #52555f;
+    background: #f5f6fb;
+  }
 }
