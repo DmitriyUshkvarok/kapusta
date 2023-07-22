@@ -2,12 +2,13 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../../redux/modal/modalSlice.js';
 import { Portal } from 'react-portal';
-import styles from '../../../sass/components/_exitModal.module.scss';
+import styles from '../../../sass/components/_modal.module.scss';
 
 import ExitModal from '../ExitModal/ExitModal.jsx';
 import ConfirmationExitModal from '../ConfirmationExitModal/ConfirmationExitModal.jsx';
 
 const Modal = () => {
+  const dispatch = useDispatch();
   const { componentName } = useSelector((store) => store.modal);
 
   const componentsLookup = {
@@ -29,13 +30,19 @@ const Modal = () => {
         dispatch(closeModal());
       }
     };
+
+    // Додайте клас `.modal-open` при відкритті модального вікна
+    document.body.classList.add('modal-open');
+
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-    };
-  });
 
-  const dispatch = useDispatch();
+      // Видаліть клас `.modal-open` при закритті модального вікна
+      document.body.classList.remove('modal-open');
+    };
+  }, [dispatch]);
+
   const handleBackdropClick = (e) => {
     const backdrop = document.querySelector(`.${styles.modalBackdrop}`);
     if (e.target === backdrop) {

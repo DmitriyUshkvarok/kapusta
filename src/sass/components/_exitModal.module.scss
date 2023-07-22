@@ -10,6 +10,8 @@
     padding: 50px 57px 60px;
     position: relative;
     background-color: $white-color;
+
+
     ;
 }
 
@@ -55,23 +57,4 @@
     width: 12px;
     height: 12px;
     cursor: pointer;
-}
-
-.modalBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--modalBackdropColor);
-    z-index: 1200;
-}
-
-;
-
-.modalContent {
-    max-height: calc(100vh - 24px);
 }
