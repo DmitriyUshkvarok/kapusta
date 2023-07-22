@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../../redux/modal/modalSlice.js';
 import { Portal } from 'react-portal';
 import styles from '../../../sass/components/_modal.module.scss';
-
 import ExitModal from '../ExitModal/ExitModal.jsx';
 import ConfirmationExitModal from '../ConfirmationExitModal/ConfirmationExitModal.jsx';
 
@@ -31,14 +30,10 @@ const Modal = () => {
       }
     };
 
-    // Додайте клас `.modal-open` при відкритті модального вікна
     document.body.classList.add('modal-open');
-
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-
-      // Видаліть клас `.modal-open` при закритті модального вікна
       document.body.classList.remove('modal-open');
     };
   }, [dispatch]);
