@@ -4,7 +4,6 @@ import { closeModal } from '../../../redux/modal/modalSlice.js';
 import { Portal } from 'react-portal';
 import styles from '../../../sass/components/_modal.module.scss';
 import ExitModal from '../ExitModal/ExitModal.jsx';
-import ConfirmationExitModal from '../ConfirmationExitModal/ConfirmationExitModal.jsx';
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -12,7 +11,6 @@ const Modal = () => {
 
   const componentsLookup = {
     exitModal: ExitModal,
-    confirmationexitmodal: ConfirmationExitModal,
   };
   let renderComponent;
 

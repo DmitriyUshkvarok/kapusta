@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import authNavStyles from '../../sass/components/_autNav.module.scss';
-import { useLogoutMutation } from '@/src/redux/authApi/authApi';
+// import { useLogoutMutation } from '@/src/redux/authApi/authApi';
+// import { useRouter } from 'next/navigation';
 import { openModal } from '@/src/redux/modal/modalSlice';
-import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '@/src/components/Modals/Modal/Modal';
 
 const AuthNav = () => {
   const { isOpen } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
-  const router = useRouter();
-  const [logOut] = useLogoutMutation();
+  // const router = useRouter();
+  // const [logOut] = useLogoutMutation();
   const [modalIs, setModalIs] = useState(false);
 
   const handleLogout = async () => {
