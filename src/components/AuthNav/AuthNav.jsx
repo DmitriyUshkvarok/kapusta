@@ -1,20 +1,41 @@
-'use client';
+import { useState, useEffect } from 'react';
 import authNavStyles from '../../sass/components/_autNav.module.scss';
-import { useLogoutMutation } from '@/src/redux/authApi/authApi';
-import { useRouter } from 'next/navigation';
+// import { useLogoutMutation } from '@/src/redux/authApi/authApi';
+// import { useRouter } from 'next/navigation';
+import { openModal } from '@/src/redux/modal/modalSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import Modal from '@/src/components/Modals/Modal/Modal';
 
 const AuthNav = () => {
-  const router = useRouter();
-  const [logOut] = useLogoutMutation();
+  const { isOpen } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
+  // const router = useRouter();
+  // const [logOut] = useLogoutMutation();
+  const [modalIs, setModalIs] = useState(false);
 
   const handleLogout = async () => {
-    const response = await logOut();
-    if (!response.error) {
-      router.replace('/');
-    }
+    setModalIs(true);
+    dispatch(
+      openModal({
+        name: 'exitModal',
+      })
+    );
+
+    // const response = await logOut();
+    // if (!response.error) {
+    //   router.replace('/');
+    // }
   };
+
+  useEffect(() => {
+    if (modalIs) {
+      setModalIs(false);
+    }
+  }, [modalIs]);
+
   return (
     <div className={authNavStyles.authNanWrapper}>
+      {isOpen && <Modal />}
       <div className={authNavStyles.userAvatar}>
         <span>U</span>
       </div>
