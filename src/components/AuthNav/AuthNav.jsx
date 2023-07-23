@@ -24,6 +24,9 @@ const AuthNav = () => {
           <use xlinkHref="/sprite.svg#icon-logout-1" />
         </svg>
       </div>
+      <svg width={5} height={36} style={{ fill: '#E0E5EB' }}>
+        <use xlinkHref="/sprite.svg#icon-line-vertical" />
+      </svg>
       <p className={authNavStyles.logoutText} onClick={handleLogout}>
         Exit
       </p>
