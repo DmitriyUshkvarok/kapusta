@@ -11,8 +11,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 
+import modalReducer from './modal/modalSlice';
+
 const store = configureStore({
   reducer: {
+    modal: modalReducer,
     auth: persisteAuthReducer,
     [authApi.reducerPath]: authApi.reducer,
   },
