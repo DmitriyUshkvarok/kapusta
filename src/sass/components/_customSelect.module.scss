@@ -1,0 +1,117 @@
+@import '../util/mixins.module';
+@import '../util/variables.module';
+
+.wrapCustomSelect {
+  position: relative;
+  margin-bottom: 34px;
+  @include mediaQuery(768px) {
+    margin-bottom: 0;
+  }
+}
+
+.wrapCustomSelect:focus {
+  outline: 2px solid orange;
+  outline-offset: -2px;
+  border-bottom-right-radius: 16px;
+
+  @include mediaQuery(768px) {
+    border-bottom-right-radius: 0;
+  }
+  @include mediaQuery(1280px) {
+    height: 40px;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.customListSelect {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 888;
+  opacity: 0;
+
+  width: 100%;
+  text-align: left;
+  border: 2px solid $secondary-color;
+  background: $white-color;
+  box-shadow: 0px 3px 4px 0px rgba(170, 178, 197, 0.4);
+}
+
+.customListSelect.open {
+  animation: slideIn 110ms ease-out;
+  opacity: 1;
+}
+
+.customItem {
+  color: $select-table-color;
+
+  font-size: 12px;
+  letter-spacing: 0.24px;
+
+  padding: 8px 19px;
+
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
+
+  &:hover {
+    color: $gray-color;
+    background-color: $secondary-color;
+  }
+}
+
+.customSelect {
+  width: 280px;
+
+  padding: 12px 20px;
+  border: 2px solid $white-color;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  color: $select-table-color;
+
+  font-size: 12px;
+  letter-spacing: 0.24px;
+  text-align: left;
+
+  @include mediaQuery(768px) {
+    width: 186px;
+    max-height: 40px;
+    border: 2px solid $select-table-color;
+    border-bottom-right-radius: 0;
+    border-left: none;
+    padding: 11px 20px;
+  }
+  @include mediaQuery(768px) {
+    width: 168px;
+  }
+}
+
+.iconStyled {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+.errMsg {
+  position: absolute;
+  top: 50%;
+  color: $error-color;
+  font-size: 10px;
+  transform: translateY(-50%);
+  right: 42px;
+  @include mediaQuery(768px) {
+    top: 120%;
+    left: 20px;
+  }
+}

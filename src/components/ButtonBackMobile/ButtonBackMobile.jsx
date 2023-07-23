@@ -6,8 +6,8 @@ export default function ButtonBackMobile({ pathname }) {
     <Link
       className={styles.linkStyled}
       href={{
-        pathname: '/transaction',
-        query: { name: pathname },
+        pathname: `/transaction${pathname}`,
+        // query: { name: pathname },
       }}
     >
       <span>

@@ -1,12 +1,7 @@
+import getAndTransformDate from '@/src/auxiliaryFunctions/getAndTransformDate';
 import styles from '@/src/sass/components/_data.module.scss';
 export default function DateCalendar() {
-  const today = new Date();
-
-  const day = String(today.getDate()).padStart(2, '0');
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const year = today.getFullYear();
-
-  const formattedDate = `${day}.${month}.${year}`;
+  const formattedDate = getAndTransformDate();
 
   return (
     <div className={styles.container}>

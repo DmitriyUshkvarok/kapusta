@@ -37,7 +37,7 @@ export default function BalanceLayout({ children }) {
 
         <NavBalance />
         <div className={styles.wrapContentTablet}>
-          <TransactionForm />
+          <TransactionForm pathname={pathname} />
           <div className={styles.containerDesktop}>{children}</div>
         </div>
       </div>
