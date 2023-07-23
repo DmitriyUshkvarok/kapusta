@@ -3,7 +3,7 @@
 
 .container {
   @include flexCenter();
-  gap: 15px;
+
   margin-bottom: 35px;
   @include mediaQuery(768px) {
     margin-bottom: 0px;
@@ -11,9 +11,11 @@
 }
 
 .linkStyled {
+  display: flex;
+  gap: 15px;
+  align-items: center;
   color: $opacity-color;
   text-align: right;
   font-size: 14px;
   letter-spacing: 0.48px;
-  line-height: normal;
 }

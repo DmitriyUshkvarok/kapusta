@@ -1,4 +1,5 @@
 @import '../util/mixins.module';
+@import '../util/variables.module';
 
 .container {
   margin-top: 18px;
@@ -26,45 +27,21 @@
 }
 
 .label {
-  @media screen and (max-width: 767px) {
-    width: 280px;
-    display: block;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 290px;
-    display: block;
-  }
+  position: relative;
+  display: block;
 }
 
-.input {
-  width: 100%;
-  padding-left: 20px;
-  border: 2px solid #fff;
-
-  border-top-left-radius: 16px;
-  background-color: transparent;
-  height: 40px;
-
-  @include mediaQuery(768px) {
-    border: 2px solid #c7ccdc;
+.labelForDesc {
+  @media screen and (max-width: 767px) {
+    min-width: 280px;
   }
-
-  &::placeholder {
-    color: #c7ccdc;
-
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.24px;
+  @media screen and (min-width: 1280px) {
+    min-width: 290px;
   }
 }
 
 .labelForSum {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  @include flexCenter();
   margin-bottom: 90px;
   @include mediaQuery(768px) {
     margin-bottom: 0;
@@ -75,17 +52,44 @@
   }
 }
 
+.input {
+  background-color: transparent;
+  padding-left: 20px;
+  border: 2px solid;
+}
+
+.inputByDecs {
+  width: 100%;
+  padding-left: 20px;
+  border-color: $white-color;
+
+  border-top-left-radius: 16px;
+  background-color: transparent;
+  height: 40px;
+
+  @include mediaQuery(768px) {
+    border-color: $select-table-color;
+  }
+
+  &::placeholder {
+    color: $select-table-color;
+
+    font-size: 12px;
+    letter-spacing: 0.24px;
+  }
+}
+
 .inputBySum {
   width: 125px;
   height: 44px;
   padding-left: 20px;
   background-color: transparent;
   border-radius: 22px 0px 0px 22px;
-  border: 2px solid #fff;
+  border-color: $white-color;
 
   @include mediaQuery(768px) {
     width: 100px;
-    border: 2px solid #c7ccdc;
+    border-color: $select-table-color;
     border-radius: 0px 20px 20px 0px;
     height: 40px;
     border-left: none;
@@ -96,12 +100,10 @@
   }
 }
 .containerByIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   padding: 10px 20px;
   border-radius: 0px 22px 22px 0px;
-  border: 2px solid #fff;
+  border: 2px solid $white-color;
   border-left: none;
   cursor: pointer;
 
@@ -125,9 +127,7 @@
   text-align: center;
   padding: 15px 0;
   font-size: 12px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 0.24px;
   text-transform: uppercase;
   border-radius: 16px;
@@ -136,22 +136,42 @@
 
 .btnSubmit {
   margin-right: 20px;
-  color: #fff;
-  background: #ff751d;
+  color: $white-color;
+  background: $primary-color;
   filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
 }
 
 .btnClear {
-  color: #52555f;
-  background: #f5f6fb;
+  color: $gray-color;
+  background: $secondary-color;
   box-shadow: 1px 2px 5px 0px rgba(170, 178, 197, 0.4);
 }
 
-.errMsgStyled {
+.err {
   position: absolute;
-  top: 110%;
-  left: 4px;
-
   font-size: 10px;
-  color: red;
+  color: $error-color;
+}
+
+.errMsgForSum {
+  top: 110%;
+  left: 64px;
+  @include mediaQuery(768px) {
+    left: 4px;
+  }
+  @include mediaQuery(1280px) {
+    top: 118%;
+  }
+}
+
+.errMsgForDesc {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 100px;
+  @include mediaQuery(768px) {
+    top: 110%;
+    left: 20px;
+    transform: none;
+  }
 }

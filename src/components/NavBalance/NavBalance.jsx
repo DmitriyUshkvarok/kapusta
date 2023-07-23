@@ -14,14 +14,18 @@ export default function NavBalance() {
             pathname === '/balance/expense' ? styles.active : ''
           }`}
         >
-          <Link href="/balance/expense">expense</Link>
+          <Link className={styles.linkStyled} href="/balance/expense">
+            expense
+          </Link>
         </li>
         <li
           className={`${styles.itemNav} ${
             pathname === '/balance/income' ? styles.active : ''
           }`}
         >
-          <Link href="/balance/income">income</Link>
+          <Link className={styles.linkStyled} href="/balance/income">
+            income
+          </Link>
         </li>
       </ul>
     </div>

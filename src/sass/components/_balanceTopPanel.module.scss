@@ -84,12 +84,14 @@
   border: 2px solid $white-color;
   padding: 12px 16px 12px 19px;
   color: $black-color;
-
+  width: 140px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24px;
   text-transform: uppercase;
+  background: transparent;
   @include mediaQuery(768px) {
+    width: 125px;
     border-radius: 16px;
     border: 2px solid #fff;
   }
@@ -100,17 +102,27 @@
   border: 2px solid $white-color;
   border-left: none;
   padding: 12px 22px 12px 18px;
-
+  background: transparent;
   color: $opacity-color;
   text-align: center;
-
+  width: 142px;
   font-size: 12px;
 
   letter-spacing: 0.24px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
   @include mediaQuery(768px) {
     border-radius: 16px;
     border: 2px solid #fff;
+  }
+  &:hover {
+    background: $primary-color;
+    color: $white-color;
+  }
+  &:disabled {
+    background: transparent;
+    color: $opacity-color;
   }
 }

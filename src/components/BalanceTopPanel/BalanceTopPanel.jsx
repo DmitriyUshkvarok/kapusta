@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 const BalanceTopPanel = () => {
   const [showPopUp, setShowPopUp] = useState(false);
+  const [amount, setAmount] = useState('');
+  const [isAmountSet, setIsAmountSet] = useState(false);
 
   const handleMouseEnter = () => {
     setShowPopUp(true);
@@ -12,20 +14,40 @@ const BalanceTopPanel = () => {
   const handleMouseLeave = () => {
     setShowPopUp(false);
   };
+
+  const handleChangeSum = (e) => {
+    setAmount(e.target.value);
+  };
+
+  const submitSum = (e) => {
+    e.preventDefault();
+    setIsAmountSet(true);
+  };
   return (
     <div>
       <div className={styles.container}>
         <h2 className={styles.title}>Balance:</h2>
-        <div className={styles.balanceContent}>
-          <p
+        <form
+          autoComplete="off"
+          onSubmit={(e) => submitSum(e)}
+          className={styles.balanceContent}
+        >
+          <input
+            name="balance"
+            type="text"
+            value={isAmountSet ? `${amount} UAH` : amount}
+            readOnly={isAmountSet}
+            placeholder="00.00 UAH"
+            onChange={(e) => handleChangeSum(e)}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={styles.sumaTitle}
-          >
-            00.00 UAH
-          </p>
+          />
 
-          <div className={`${styles.popUp} ${showPopUp ? styles.show : ''}`}>
+          <div
+            style={{ display: isAmountSet && 'none' }}
+            className={`${styles.popUp} ${showPopUp ? styles.show : ''}`}
+          >
             <p className={styles.titlePopUp}>
               Hello! To get started, enter the current balance of your account!
             </p>
@@ -34,8 +56,14 @@ const BalanceTopPanel = () => {
             </p>
           </div>
 
-          <p className={styles.confirmTitle}>Confirm</p>
-        </div>
+          <button
+            disabled={isAmountSet}
+            type="submit"
+            className={styles.confirmTitle}
+          >
+            Confirm
+          </button>
+        </form>
       </div>
     </div>
   );
