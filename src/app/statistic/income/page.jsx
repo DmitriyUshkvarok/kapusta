@@ -1,8 +1,15 @@
 import IncomeList from '@/src/components/IncomeList/IncomeList';
+import DiagramIncome from '@/src/components/DiagramIncome/DiagramIncome';
+
 const IncomePage = () => {
   return (
     <>
-      <IncomeList />
+      <div>
+        <IncomeList />
+      </div>
+      <div>
+        <DiagramIncome />
+      </div>
     </>
   );
 };

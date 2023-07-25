@@ -13,6 +13,7 @@ export default function StatisticLayout({ children }) {
           <StatisticExpenseIncomePanel />
         </div>
         {children}
+        <div className={styles.additionalBackground}></div>
       </section>
     </>
   );

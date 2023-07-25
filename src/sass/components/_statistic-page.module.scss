@@ -2,6 +2,7 @@
 @import '../util/mixins.module';
 
 .statisticPage {
+  position: relative;
   background-image: url('/statistic-fon-mob.png');
   background-repeat: no-repeat;
   background-position: top -60px left 0;
@@ -19,4 +20,15 @@
     padding-left: 123px;
     padding-right: 123px;
   }
+}
+
+.additionalBackground {
+  position: absolute;
+  bottom: -120px;
+  right: 56px;
+  width: 183px;
+  height: 142px;
+  background-image: url('/bottomBcgTablet.png');
+  background-repeat: no-repeat;
+  z-index: -2;
 }

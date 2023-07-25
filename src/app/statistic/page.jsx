@@ -1,9 +1,9 @@
-import IncomePage from './income/page';
+import ExpensesPage from './expenses/page';
 
 const StatisticPage = () => {
   return (
     <>
-      <IncomePage />
+      <ExpensesPage />
     </>
   );
 };
